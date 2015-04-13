@@ -53,20 +53,24 @@ connections:
 
   mysql:
     arunit:
-      username: rails
+      username: <%= ENV['MYSQL_USER'] %>
+      password: <%= ENV['MYSQL_PASSWORD'] %>
       encoding: utf8
       collation: utf8_unicode_ci
     arunit2:
-      username: rails
+      username: <%= ENV['MYSQL_USER'] %>
+      password: <%= ENV['MYSQL_PASSWORD'] %>
       encoding: utf8
 
   mysql2:
     arunit:
-      username: rails
+      username: <%= ENV['MYSQL_USER'] %>
+      password: <%= ENV['MYSQL_PASSWORD'] %>
       encoding: utf8
       collation: utf8_unicode_ci
     arunit2:
-      username: rails
+      username: <%= ENV['MYSQL_USER'] %>
+      password: <%= ENV['MYSQL_PASSWORD'] %>
       encoding: utf8
 
   oracle:
