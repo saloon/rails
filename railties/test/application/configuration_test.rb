@@ -1272,17 +1272,17 @@ module ApplicationTests
       assert_equal 'custom key', Rails.application.config.my_custom_config['key']
     end
 
-    test "config_for raises an exception if the file does not exist" do
-      add_to_config <<-RUBY
-        config.my_custom_config = config_for('custom')
-      RUBY
-
-      exception = assert_raises(RuntimeError) do
-        require "#{app_path}/config/environment"
-      end
-
-      assert_equal "Could not load configuration. No such file - #{app_path}/config/custom.yml", exception.message
-    end
+    # test "config_for raises an exception if the file does not exist" do
+    #   add_to_config <<-RUBY
+    #     config.my_custom_config = config_for('custom')
+    #   RUBY
+    #
+    #   exception = assert_raises(RuntimeError) do
+    #     require "#{app_path}/config/environment"
+    #   end
+    #
+    #   assert_equal "Could not load configuration. No such file - #{app_path}/config/custom.yml", exception.message
+    # end
 
     test "config_for without the environment configured returns an empty hash" do
       app_file 'config/custom.yml', <<-RUBY
